@@ -1,0 +1,684 @@
+{
+  "formatVersion": 1,
+  "description": "End-to-end award sequences. Each scenario replays its steps against a FixedRandomSource seeded with randomValues, so no agreement about a pseudo-random algorithm is needed.",
+  "baseTimestampMs": 1700000000000,
+  "scenarios": [
+    {
+      "id": "cooldown-and-levelup",
+      "description": "A member earns, is blocked by the cooldown, earns again and crosses into level 1.",
+      "config": {
+        "curve": {
+          "kind": "quadratic",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 15,
+            "maxXp": 25,
+            "cooldownSeconds": 60,
+            "periodCapXp": 1000
+          }
+        ]
+      },
+      "initialTotalXp": 60,
+      "randomValues": [
+        20,
+        25,
+        15
+      ],
+      "steps": [
+        {
+          "eventType": "message",
+          "nowOffsetMs": 0,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 20,
+            "baseXp": 20,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 60,
+            "newTotalXp": 80,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 800,
+            "cooldownRemainingMs": 60000,
+            "periodRemainingXp": 980
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 30000,
+          "expected": {
+            "outcome": "COOLDOWN",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 80,
+            "newTotalXp": 80,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 800,
+            "cooldownRemainingMs": 30000,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 60000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 25,
+            "baseXp": 25,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 80,
+            "newTotalXp": 105,
+            "previousLevel": 0,
+            "newLevel": 1,
+            "leveledUp": true,
+            "leveledDown": false,
+            "progressPermille": 25,
+            "cooldownRemainingMs": 60000,
+            "periodRemainingXp": 955
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 180000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 15,
+            "baseXp": 15,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 105,
+            "newTotalXp": 120,
+            "previousLevel": 1,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 100,
+            "cooldownRemainingMs": 60000,
+            "periodRemainingXp": 940
+          }
+        }
+      ],
+      "finalTotalXp": 120
+    },
+    {
+      "id": "period-cap-trim",
+      "description": "The daily cap trims the last award of the period and blocks the one after it.",
+      "config": {
+        "curve": {
+          "kind": "linear",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 30,
+            "maxXp": 30,
+            "cooldownSeconds": 0,
+            "periodCapXp": 100,
+            "periodSeconds": 3600
+          }
+        ]
+      },
+      "initialTotalXp": 0,
+      "randomValues": [
+        30
+      ],
+      "steps": [
+        {
+          "eventType": "message",
+          "nowOffsetMs": 0,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 30,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 0,
+            "newTotalXp": 30,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 300,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 70
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 1000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 30,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 30,
+            "newTotalXp": 60,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 600,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 40
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 2000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 30,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 60,
+            "newTotalXp": 90,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 900,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 10
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 3000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 10,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 90,
+            "newTotalXp": 100,
+            "previousLevel": 0,
+            "newLevel": 1,
+            "leveledUp": true,
+            "leveledDown": false,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 0
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 4000,
+          "expected": {
+            "outcome": "PERIOD_CAP",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 100,
+            "newTotalXp": 100,
+            "previousLevel": 1,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 0
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 3600000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 30,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 100,
+            "newTotalXp": 130,
+            "previousLevel": 1,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 300,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 70
+          }
+        }
+      ],
+      "finalTotalXp": 130
+    },
+    {
+      "id": "multipliers-and-global-cap",
+      "description": "A double-XP weekend runs into the cross-event global cap.",
+      "config": {
+        "curve": {
+          "kind": "quadratic",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 20,
+            "maxXp": 20,
+            "cooldownSeconds": 0
+          },
+          {
+            "eventType": "reaction",
+            "minXp": 10,
+            "maxXp": 10,
+            "cooldownSeconds": 0
+          }
+        ],
+        "globalCap": {
+          "xp": 100,
+          "periodSeconds": 86400
+        }
+      },
+      "initialTotalXp": 0,
+      "randomValues": [
+        20
+      ],
+      "steps": [
+        {
+          "eventType": "message",
+          "nowOffsetMs": 0,
+          "multipliers": [
+            {
+              "source": "weekend",
+              "permille": 2000
+            }
+          ],
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 40,
+            "baseXp": 20,
+            "multiplierPermille": 2000,
+            "previousTotalXp": 0,
+            "newTotalXp": 40,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 400,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 60
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 1000,
+          "multipliers": [
+            {
+              "source": "weekend",
+              "permille": 2000
+            }
+          ],
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 40,
+            "baseXp": 20,
+            "multiplierPermille": 2000,
+            "previousTotalXp": 40,
+            "newTotalXp": 80,
+            "previousLevel": 0,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 800,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 20
+          }
+        },
+        {
+          "eventType": "reaction",
+          "nowOffsetMs": 2000,
+          "multipliers": [
+            {
+              "source": "weekend",
+              "permille": 2000
+            }
+          ],
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 20,
+            "baseXp": 10,
+            "multiplierPermille": 2000,
+            "previousTotalXp": 80,
+            "newTotalXp": 100,
+            "previousLevel": 0,
+            "newLevel": 1,
+            "leveledUp": true,
+            "leveledDown": false,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 0
+          }
+        },
+        {
+          "eventType": "reaction",
+          "nowOffsetMs": 3000,
+          "expected": {
+            "outcome": "PERIOD_CAP",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 100,
+            "newTotalXp": 100,
+            "previousLevel": 1,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 0
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 4000,
+          "expected": {
+            "outcome": "PERIOD_CAP",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 100,
+            "newTotalXp": 100,
+            "previousLevel": 1,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": 0
+          }
+        }
+      ],
+      "finalTotalXp": 100
+    },
+    {
+      "id": "unknown-and-disabled",
+      "description": "Unknown event types and switched-off rules award nothing and do not throw.",
+      "config": {
+        "curve": {
+          "kind": "quadratic",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 10,
+            "maxXp": 10,
+            "cooldownSeconds": 0
+          },
+          {
+            "eventType": "sticker",
+            "minXp": 50,
+            "maxXp": 50,
+            "enabled": false
+          }
+        ]
+      },
+      "initialTotalXp": 500,
+      "randomValues": [
+        10
+      ],
+      "steps": [
+        {
+          "eventType": "nonsense",
+          "nowOffsetMs": 0,
+          "expected": {
+            "outcome": "UNKNOWN_EVENT",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 500,
+            "newTotalXp": 500,
+            "previousLevel": 2,
+            "newLevel": 2,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 666,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "eventType": "sticker",
+          "nowOffsetMs": 1000,
+          "expected": {
+            "outcome": "RULE_DISABLED",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 500,
+            "newTotalXp": 500,
+            "previousLevel": 2,
+            "newLevel": 2,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 666,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "eventType": "message",
+          "nowOffsetMs": 2000,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 10,
+            "baseXp": 10,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 500,
+            "newTotalXp": 510,
+            "previousLevel": 2,
+            "newLevel": 2,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 700,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        }
+      ],
+      "finalTotalXp": 510
+    },
+    {
+      "id": "penalty-and-level-loss",
+      "description": "Moderation deducts XP, the member drops a level, and the floor holds at zero.",
+      "config": {
+        "curve": {
+          "kind": "quadratic",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 10,
+            "maxXp": 10
+          }
+        ]
+      },
+      "initialTotalXp": 350,
+      "randomValues": [
+        10
+      ],
+      "steps": [
+        {
+          "kind": "penalize",
+          "amount": 100,
+          "nowOffsetMs": 0,
+          "expected": {
+            "outcome": "PENALISED",
+            "awardedXp": -100,
+            "baseXp": 100,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 350,
+            "newTotalXp": 250,
+            "previousLevel": 2,
+            "newLevel": 1,
+            "leveledUp": false,
+            "leveledDown": true,
+            "progressPermille": 750,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "kind": "penalize",
+          "amount": 1000,
+          "nowOffsetMs": 1000,
+          "expected": {
+            "outcome": "PENALISED",
+            "awardedXp": -250,
+            "baseXp": 1000,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 250,
+            "newTotalXp": 0,
+            "previousLevel": 1,
+            "newLevel": 0,
+            "leveledUp": false,
+            "leveledDown": true,
+            "progressPermille": 0,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        }
+      ],
+      "finalTotalXp": 0
+    },
+    {
+      "id": "decay-after-grace",
+      "description": "Decay charges whole periods after the grace window and stops at the floor.",
+      "config": {
+        "curve": {
+          "kind": "quadratic",
+          "base": 100,
+          "maxLevel": 20
+        },
+        "rules": [
+          {
+            "eventType": "message",
+            "minXp": 10,
+            "maxXp": 10,
+            "cooldownSeconds": 60
+          }
+        ],
+        "decay": {
+          "xpPerPeriod": 10,
+          "periodSeconds": 86400,
+          "floorXp": 900,
+          "graceSeconds": 604800
+        }
+      },
+      "initialTotalXp": 1000,
+      "randomValues": [
+        10
+      ],
+      "steps": [
+        {
+          "eventType": "message",
+          "nowOffsetMs": 0,
+          "expected": {
+            "outcome": "AWARDED",
+            "awardedXp": 10,
+            "baseXp": 10,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 1000,
+            "newTotalXp": 1010,
+            "previousLevel": 4,
+            "newLevel": 4,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 20,
+            "cooldownRemainingMs": 60000,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "kind": "decay",
+          "nowOffsetMs": 259200000,
+          "expected": {
+            "outcome": "NO_DECAY_DUE",
+            "awardedXp": 0,
+            "baseXp": 0,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 1010,
+            "newTotalXp": 1010,
+            "previousLevel": 4,
+            "newLevel": 4,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 20,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "kind": "decay",
+          "nowOffsetMs": 864000000,
+          "expected": {
+            "outcome": "DECAYED",
+            "awardedXp": -30,
+            "baseXp": 30,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 1010,
+            "newTotalXp": 980,
+            "previousLevel": 4,
+            "newLevel": 3,
+            "leveledUp": false,
+            "leveledDown": true,
+            "progressPermille": 950,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "kind": "decay",
+          "nowOffsetMs": 950400000,
+          "expected": {
+            "outcome": "DECAYED",
+            "awardedXp": -10,
+            "baseXp": 10,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 980,
+            "newTotalXp": 970,
+            "previousLevel": 3,
+            "newLevel": 3,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 925,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        },
+        {
+          "kind": "decay",
+          "nowOffsetMs": 34560000000,
+          "expected": {
+            "outcome": "DECAYED",
+            "awardedXp": -70,
+            "baseXp": 3890,
+            "multiplierPermille": 1000,
+            "previousTotalXp": 970,
+            "newTotalXp": 900,
+            "previousLevel": 3,
+            "newLevel": 3,
+            "leveledUp": false,
+            "leveledDown": false,
+            "progressPermille": 750,
+            "cooldownRemainingMs": 0,
+            "periodRemainingXp": null
+          }
+        }
+      ],
+      "finalTotalXp": 900
+    }
+  ]
+}

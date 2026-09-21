@@ -1,0 +1,127 @@
+{
+  "formatVersion": 1,
+  "description": "Integer permille multiplier chains. Each factor is applied in order with floor division, so the order is part of the contract.",
+  "cases": [
+    {
+      "baseXp": 20,
+      "permilles": [],
+      "expected": 20
+    },
+    {
+      "baseXp": 20,
+      "permilles": [
+        2000
+      ],
+      "expected": 40
+    },
+    {
+      "baseXp": 20,
+      "permilles": [
+        500
+      ],
+      "expected": 10
+    },
+    {
+      "baseXp": 20,
+      "permilles": [
+        0
+      ],
+      "expected": 0
+    },
+    {
+      "baseXp": 10,
+      "permilles": [
+        1500,
+        1500
+      ],
+      "expected": 22
+    },
+    {
+      "baseXp": 7,
+      "permilles": [
+        1500,
+        1100
+      ],
+      "expected": 11
+    },
+    {
+      "baseXp": 7,
+      "permilles": [
+        1100,
+        1500
+      ],
+      "expected": 10
+    },
+    {
+      "baseXp": 1,
+      "permilles": [
+        1999
+      ],
+      "expected": 1
+    },
+    {
+      "baseXp": 3,
+      "permilles": [
+        333,
+        3000
+      ],
+      "expected": 0
+    },
+    {
+      "baseXp": 999,
+      "permilles": [
+        1001,
+        1001,
+        1001
+      ],
+      "expected": 999
+    },
+    {
+      "baseXp": 2848452375478271,
+      "permilles": [
+        2490
+      ],
+      "expected": 7092646414940894
+    },
+    {
+      "baseXp": 8196356673896447,
+      "permilles": [
+        1000
+      ],
+      "expected": 8196356673896447
+    },
+    {
+      "baseXp": 3654325679161343,
+      "permilles": [
+        1500,
+        999
+      ],
+      "expected": 5476007030223271
+    },
+    {
+      "baseXp": 4503599627370,
+      "permilles": [
+        1500,
+        999,
+        1001,
+        700,
+        1234
+      ],
+      "expected": 5835308201866
+    },
+    {
+      "baseXp": 9007199254740991,
+      "permilles": [
+        1000
+      ],
+      "expected": 9007199254740991
+    },
+    {
+      "baseXp": 9007199254740991,
+      "permilles": [
+        999
+      ],
+      "expected": 8998192055486250
+    }
+  ]
+}

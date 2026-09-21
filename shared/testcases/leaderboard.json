@@ -1,0 +1,302 @@
+{
+  "formatVersion": 1,
+  "description": "Tie handling is the part of a leaderboard everyone gets wrong. Ties keep the order the rows were handed in — never a comparison of member ids, which sorts differently in Python and JavaScript.",
+  "curve": {
+    "kind": "quadratic",
+    "base": 100,
+    "maxLevel": 50
+  },
+  "rows": [
+    {
+      "memberId": "ana",
+      "totalXp": 500
+    },
+    {
+      "memberId": "ben",
+      "totalXp": 900
+    },
+    {
+      "memberId": "cai",
+      "totalXp": 500
+    },
+    {
+      "memberId": "dee",
+      "totalXp": 100
+    },
+    {
+      "memberId": "eli",
+      "totalXp": 900
+    },
+    {
+      "memberId": "fay",
+      "totalXp": 0
+    },
+    {
+      "memberId": "gus",
+      "totalXp": 12345
+    }
+  ],
+  "boards": [
+    {
+      "tieMode": "COMPETITION",
+      "entries": [
+        {
+          "memberId": "gus",
+          "totalXp": 12345,
+          "level": 15,
+          "rank": 1,
+          "competitionRank": 1,
+          "denseRank": 1,
+          "position": 0,
+          "progressPermille": 215
+        },
+        {
+          "memberId": "ben",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 2,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 1,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "eli",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 2,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 2,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "ana",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 4,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 3,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "cai",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 4,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 4,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "dee",
+          "totalXp": 100,
+          "level": 1,
+          "rank": 6,
+          "competitionRank": 6,
+          "denseRank": 4,
+          "position": 5,
+          "progressPermille": 0
+        },
+        {
+          "memberId": "fay",
+          "totalXp": 0,
+          "level": 0,
+          "rank": 7,
+          "competitionRank": 7,
+          "denseRank": 5,
+          "position": 6,
+          "progressPermille": 0
+        }
+      ],
+      "rankOf": {
+        "ana": 4,
+        "ben": 2,
+        "cai": 4,
+        "dee": 6,
+        "eli": 2,
+        "fay": 7,
+        "gus": 1
+      }
+    },
+    {
+      "tieMode": "DENSE",
+      "entries": [
+        {
+          "memberId": "gus",
+          "totalXp": 12345,
+          "level": 15,
+          "rank": 1,
+          "competitionRank": 1,
+          "denseRank": 1,
+          "position": 0,
+          "progressPermille": 215
+        },
+        {
+          "memberId": "ben",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 2,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 1,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "eli",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 2,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 2,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "ana",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 3,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 3,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "cai",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 3,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 4,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "dee",
+          "totalXp": 100,
+          "level": 1,
+          "rank": 4,
+          "competitionRank": 6,
+          "denseRank": 4,
+          "position": 5,
+          "progressPermille": 0
+        },
+        {
+          "memberId": "fay",
+          "totalXp": 0,
+          "level": 0,
+          "rank": 5,
+          "competitionRank": 7,
+          "denseRank": 5,
+          "position": 6,
+          "progressPermille": 0
+        }
+      ],
+      "rankOf": {
+        "ana": 3,
+        "ben": 2,
+        "cai": 3,
+        "dee": 4,
+        "eli": 2,
+        "fay": 5,
+        "gus": 1
+      }
+    },
+    {
+      "tieMode": "ORDINAL",
+      "entries": [
+        {
+          "memberId": "gus",
+          "totalXp": 12345,
+          "level": 15,
+          "rank": 1,
+          "competitionRank": 1,
+          "denseRank": 1,
+          "position": 0,
+          "progressPermille": 215
+        },
+        {
+          "memberId": "ben",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 2,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 1,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "eli",
+          "totalXp": 900,
+          "level": 3,
+          "rank": 3,
+          "competitionRank": 2,
+          "denseRank": 2,
+          "position": 2,
+          "progressPermille": 750
+        },
+        {
+          "memberId": "ana",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 4,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 3,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "cai",
+          "totalXp": 500,
+          "level": 2,
+          "rank": 5,
+          "competitionRank": 4,
+          "denseRank": 3,
+          "position": 4,
+          "progressPermille": 666
+        },
+        {
+          "memberId": "dee",
+          "totalXp": 100,
+          "level": 1,
+          "rank": 6,
+          "competitionRank": 6,
+          "denseRank": 4,
+          "position": 5,
+          "progressPermille": 0
+        },
+        {
+          "memberId": "fay",
+          "totalXp": 0,
+          "level": 0,
+          "rank": 7,
+          "competitionRank": 7,
+          "denseRank": 5,
+          "position": 6,
+          "progressPermille": 0
+        }
+      ],
+      "rankOf": {
+        "ana": 4,
+        "ben": 2,
+        "cai": 5,
+        "dee": 6,
+        "eli": 3,
+        "fay": 7,
+        "gus": 1
+      }
+    }
+  ],
+  "paging": {
+    "offset": 2,
+    "limit": 3,
+    "memberIds": [
+      "eli",
+      "ana",
+      "cai"
+    ]
+  }
+}

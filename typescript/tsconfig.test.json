@@ -1,0 +1,15 @@
+{
+  // The tests and the examples, type-checked under the same rules as the source.
+  //
+  // `tsconfig.json` excludes both, because it is also the build configuration
+  // and `rootDir` has to stay `src`. That left `npm run typecheck` silent about
+  // two directories: a test that only compiles because of an `any` proves less
+  // than it looks like it does, and an example that no longer compiles is
+  // documentation that lies.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "."
+  },
+  "include": ["src/**/*", "tests/**/*", "examples/**/*"]
+}

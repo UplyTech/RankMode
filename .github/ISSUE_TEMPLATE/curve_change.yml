@@ -1,0 +1,77 @@
+name: Curve change proposal
+description: A change to what an existing curve computes
+title: "feat!: curve change — "
+labels: [curve-change, breaking-change]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **A change to what a curve computes is a major version, always.**
+
+        A curve change moves the level of every member in every community that
+        uses the library. Somebody who went to bed at level 12 wakes up at level
+        9 and opens a support ticket. That is not a bug to be fixed later; it is
+        a release decision — announced in advance, and shipped with a migration.
+
+        This template exists so the decision is made with the numbers in front
+        of it. It never goes stale, and it is not merged quickly.
+
+  - type: textarea
+    id: change
+    attributes:
+      label: The change
+      description: Which curve, and what its thresholds would become.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why the current numbers are wrong
+      description: >-
+        "Obviously wrong" is not a reason to skip the major version — CONTRIBUTING.md
+        says so explicitly. It is still the reason the change is worth making,
+        so write it down.
+    validations:
+      required: true
+
+  - type: textarea
+    id: preview
+    attributes:
+      label: The migration preview
+      description: >-
+        `preview_migration(all_totals, old_curve, new_curve)` against a realistic
+        set of totals — a real scope if you have one. The numbers a community
+        owner asks for are `safe_for_members`, `lost_levels` and `max_loss`.
+      render: text
+      placeholder: |
+        member_count      4812
+        unchanged         4390
+        gained_levels      401
+        lost_levels         21
+        max_gain             2
+        max_loss             1
+        safe_for_members  False
+    validations:
+      required: true
+
+  - type: dropdown
+    id: strategy
+    attributes:
+      label: Which migration strategy operators should use
+      options:
+        - PRESERVE_PROGRESS — level and bar both survive (the default)
+        - PRESERVE_LEVEL — level survives, the bar resets
+        - PRESERVE_XP — the raw total survives, levels move
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: What a curve change needs before it can ship
+      options:
+        - label: A preview run against a realistic scope, above.
+        - label: An entry in CHANGELOG.md under a **major** version.
+        - label: Regenerated `shared/testcases/curves.json`, with the diff reviewed line by line.
+        - label: A note for operators saying what will visibly change for their members.

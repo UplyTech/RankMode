@@ -1,0 +1,101 @@
+name: Rating or ladder change proposal
+description: A change to what a rating system or the ladder computes
+title: "feat!: rating change — "
+labels: [rating-change, breaking-change, ranked]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > **A change to what a rating or ladder formula computes is a major version, always.**
+
+        The parallel of a curve change, and it lands harder. A curve change
+        moves a number people watch go up. A rating change moves where somebody
+        sits relative to everybody else — a player who went to bed in Gold I
+        wakes up in Gold III and reads it as the ladder being rigged.
+
+        This template exists so the decision is made with the numbers in front
+        of it. It never goes stale, and it is not merged quickly.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part
+      options:
+        - The rating formula (rating.py / rating.ts) — Elo or Glicko-2
+        - The fixed-point arithmetic underneath it (fixed.py / fixed.ts)
+        - The ladder (ladder.py / ladder.ts) — tiers, points, series, demotion
+        - The season reset (season.py / season.ts)
+        - Matchmaking (matchmaking.py / matchmaking.ts)
+        - The engine's order of operations (ranked.py / ranked.ts)
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: The change
+      description: What the formula does now, and what it would do instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why the current numbers are wrong
+      description: |
+        Not "wrong" as in "I would have chosen differently" — the defaults are
+        already somebody's judgement, and a preference is a configuration
+        option rather than a formula change. Wrong as in: it contradicts the
+        published system it claims to implement, it violates a property the
+        library states, or it produces an outcome no operator would accept.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: What it is checked against
+      description: |
+        Glicko-2 is checked against Glickman's own worked example, digit for
+        digit, and that example is a test. If your change moves that number,
+        say so here and say why the paper is wrong. If it does not, say which
+        test pins the new behaviour down.
+    validations:
+      required: true
+
+  - type: textarea
+    id: population
+    attributes:
+      label: What it does to a population
+      description: |
+        Replay a season through both the old and the new formula and show where
+        players land. `shared/tools/differential/` generates the seasons; the
+        `engine` vectors in `shared/testcases/ranked.json` are four of them
+        already. How many players change tier?
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: determinism
+    attributes:
+      label: Determinism
+      description: The library's whole promise, and the easiest thing to break here.
+      options:
+        - label: The change is integer arithmetic throughout — no float reaches a value a caller can see.
+          required: true
+        - label: Both editions are changed together, and produce identical numbers.
+          required: true
+        - label: The differential harness passes over at least 20,000 cases on a fresh seed.
+          required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: What a rating change needs before it can ship
+      options:
+        - label: The population replay above.
+        - label: An entry in CHANGELOG.md under a **major** version.
+        - label: Regenerated `shared/testcases/ranked.json`, with the `engine` diff understood rather than skimmed.
+        - label: A note for operators saying what will visibly change for their players.
+        - label: A property test, if the change is one — see CONTRIBUTING.md on why three of the defects in 3.0.0 were property failures.

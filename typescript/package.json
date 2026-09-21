@@ -1,0 +1,84 @@
+{
+  "name": "@uplytech/rankmode",
+  "version": "3.0.0",
+  "description": "Experience points, levels and leaderboards for Discord bots, forums and websites. Pure calculation: no storage, no platform binding, no display. Curves, cooldowns, period caps, multipliers, decay, tie-safe leaderboards and curve migration.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src tests examples --ext .ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.test.json",
+    "examples": "vite-node examples/basic.ts && vite-node examples/discord-bot-integration.ts && vite-node examples/ranked-season.ts",
+    "prepublishOnly": "npm run lint && npm run test && npm run build"
+  },
+  "keywords": [
+    "xp",
+    "experience",
+    "levels",
+    "levelling",
+    "leveling",
+    "ranking",
+    "leaderboard",
+    "gamification",
+    "discord-bot",
+    "community",
+    "forum",
+    "uplytech",
+    "rankmode"
+  ],
+  "author": "UplyTech (Tim Hauke) <dev@uplytech.de>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UplyTech/RankMode.git",
+    "directory": "typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/UplyTech/RankMode/issues"
+  },
+  "homepage": "https://github.com/UplyTech/RankMode#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "fast-check": "^3.22.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.5.4",
+    "vite-node": "^1.6.0",
+    "vitest": "^1.6.0"
+  },
+  "sideEffects": false
+}

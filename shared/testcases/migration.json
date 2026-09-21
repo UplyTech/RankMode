@@ -1,0 +1,3375 @@
+{
+  "formatVersion": 1,
+  "description": "Converting stored totals when the curve changes. A curve change is always a major version; these vectors pin down what it does to a member.",
+  "cases": [
+    {
+      "id": "linear-to-quadratic/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 800,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 5490,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 5500,
+          "previousLevel": 10,
+          "newLevel": 10,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 8242,
+          "previousLevel": 12,
+          "newLevel": 12,
+          "levelDelta": 0,
+          "previousProgressPermille": 340,
+          "newProgressPermille": 340,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "linear-to-quadratic/PRESERVE_LEVEL",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 600,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 4500,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 5500,
+          "previousLevel": 10,
+          "newLevel": 10,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 7800,
+          "previousLevel": 12,
+          "newLevel": 12,
+          "levelDelta": 0,
+          "previousProgressPermille": 340,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 46500,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "linear-to-quadratic/PRESERVE_XP",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 3,
+          "newLevel": 2,
+          "levelDelta": -1,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 166,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 9,
+          "newLevel": 3,
+          "levelDelta": -6,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 997,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 10,
+          "newLevel": 4,
+          "levelDelta": -6,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 30,
+          "newLevel": 9,
+          "levelDelta": -21,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 30,
+          "newLevel": 19,
+          "levelDelta": -11,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 30,
+          "newLevel": 20,
+          "levelDelta": -10,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 30,
+          "newLevel": 20,
+          "levelDelta": -10,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 30,
+          "newLevel": 24,
+          "levelDelta": -6,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 12,
+          "newLevel": 4,
+          "levelDelta": -8,
+          "previousProgressPermille": 340,
+          "newProgressPermille": 468,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-exponential/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "exponential",
+        "base": 100,
+        "growthPermille": 1500,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 287,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 164,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 810,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 994,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 812,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 9378,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 499,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 661852,
+          "previousLevel": 19,
+          "newLevel": 19,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 998,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 662073,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 662073,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 3352492,
+          "previousLevel": 24,
+          "newLevel": 24,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1048,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 467,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-exponential/PRESERVE_LEVEL",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "exponential",
+        "base": 100,
+        "growthPermille": 1500,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 250,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 475,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 812,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 7464,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 441320,
+          "previousLevel": 19,
+          "newLevel": 19,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 662073,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 662073,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 3352492,
+          "previousLevel": 24,
+          "newLevel": 24,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 812,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 38188856,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-exponential/PRESERVE_XP",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "exponential",
+        "base": 100,
+        "growthPermille": 1500,
+        "maxLevel": 30
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 444,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 3,
+          "newLevel": 4,
+          "levelDelta": 1,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 370,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 372,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 9,
+          "newLevel": 8,
+          "levelDelta": -1,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 34,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 30,
+          "newLevel": 13,
+          "levelDelta": -17,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 589,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 19,
+          "newLevel": 11,
+          "levelDelta": -8,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 460,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 11,
+          "levelDelta": -9,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 460,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 20,
+          "newLevel": 11,
+          "levelDelta": -9,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 460,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 24,
+          "newLevel": 12,
+          "levelDelta": -12,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 336,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 30,
+          "newLevel": 15,
+          "levelDelta": -15,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 297,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 835,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 30,
+          "newLevel": 30,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-short-linear/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 3
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 216,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 160,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 300,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 300,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 300,
+          "previousLevel": 9,
+          "newLevel": 3,
+          "levelDelta": -6,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 300,
+          "previousLevel": 19,
+          "newLevel": 3,
+          "levelDelta": -16,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 300,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 300,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 300,
+          "previousLevel": 24,
+          "newLevel": 3,
+          "levelDelta": -21,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 300,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-short-linear/PRESERVE_LEVEL",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 3
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 200,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 300,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 300,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 300,
+          "previousLevel": 9,
+          "newLevel": 3,
+          "levelDelta": -6,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 300,
+          "previousLevel": 19,
+          "newLevel": 3,
+          "levelDelta": -16,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 300,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 300,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 300,
+          "previousLevel": 24,
+          "newLevel": 3,
+          "levelDelta": -21,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 300,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 300,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": true
+        }
+      ]
+    },
+    {
+      "id": "quadratic-to-short-linear/PRESERVE_XP",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 30
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 3
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 2,
+          "newLevel": 3,
+          "levelDelta": 1,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 9,
+          "newLevel": 3,
+          "levelDelta": -6,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 19,
+          "newLevel": 3,
+          "levelDelta": -16,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 20,
+          "newLevel": 3,
+          "levelDelta": -17,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 24,
+          "newLevel": 3,
+          "levelDelta": -21,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 4,
+          "newLevel": 3,
+          "levelDelta": -1,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 30,
+          "newLevel": 3,
+          "levelDelta": -27,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-extended/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 20
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 50
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 349,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 163,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 998,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 995,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20998,
+          "previousLevel": 19,
+          "newLevel": 19,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 468,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 23099,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-extended/PRESERVE_LEVEL",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 20
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 50
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 300,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 600,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 4500,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 19000,
+          "previousLevel": 19,
+          "newLevel": 19,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "quadratic-extended/PRESERVE_XP",
+      "from": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 20
+      },
+      "to": {
+        "kind": "quadratic",
+        "base": 100,
+        "maxLevel": 50
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 166,
+          "newProgressPermille": 166,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 997,
+          "newProgressPermille": 997,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 9,
+          "newLevel": 9,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 20,
+          "newLevel": 31,
+          "levelDelta": 11,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 125,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 19,
+          "newLevel": 19,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 999,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 20,
+          "newLevel": 20,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 20,
+          "newLevel": 24,
+          "levelDelta": 4,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 20,
+          "newLevel": 44,
+          "levelDelta": 24,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 222,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 4,
+          "newLevel": 4,
+          "levelDelta": 0,
+          "previousProgressPermille": 468,
+          "newProgressPermille": 468,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 20,
+          "newLevel": 50,
+          "levelDelta": 30,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 20,
+          "newLevel": 50,
+          "levelDelta": 30,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "linear-extended/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 5
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 40
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 599,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "linear-extended/PRESERVE_LEVEL",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 5
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 40
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 300,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 500,
+          "previousLevel": 5,
+          "newLevel": 5,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "linear-extended/PRESERVE_XP",
+      "from": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 5
+      },
+      "to": {
+        "kind": "linear",
+        "base": 100,
+        "maxLevel": 40
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 10,
+          "newProgressPermille": 10,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 990,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 3,
+          "newLevel": 3,
+          "levelDelta": 0,
+          "previousProgressPermille": 500,
+          "newProgressPermille": 500,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 5,
+          "newLevel": 9,
+          "levelDelta": 4,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 990,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 5,
+          "newLevel": 10,
+          "levelDelta": 5,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 5,
+          "newLevel": 12,
+          "levelDelta": 7,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 340,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 5,
+          "newLevel": 40,
+          "levelDelta": 35,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "wide-to-wide/PRESERVE_PROGRESS",
+      "from": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          1000,
+          2000
+        ]
+      },
+      "to": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          4503599627370496,
+          9007199254740991
+        ]
+      },
+      "strategy": "PRESERVE_PROGRESS",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 4503599627370,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 1,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 445856363109679,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 99,
+          "newProgressPermille": 98,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 450359962737049,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 100,
+          "newProgressPermille": 99,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 1576259869579673,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 350,
+          "newProgressPermille": 349,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 4499096027743125,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 998,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 5557441940175191,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 234,
+          "newProgressPermille": 233,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "wide-to-wide/PRESERVE_LEVEL",
+      "from": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          1000,
+          2000
+        ]
+      },
+      "to": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          4503599627370496,
+          9007199254740991
+        ]
+      },
+      "strategy": "PRESERVE_LEVEL",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 1,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 99,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 100,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 350,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 1,
+          "newLevel": 1,
+          "levelDelta": 0,
+          "previousProgressPermille": 234,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    },
+    {
+      "id": "wide-to-wide/PRESERVE_XP",
+      "from": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          1000,
+          2000
+        ]
+      },
+      "to": {
+        "kind": "tabular",
+        "thresholds": [
+          0,
+          4503599627370496,
+          9007199254740991
+        ]
+      },
+      "strategy": "PRESERVE_XP",
+      "results": [
+        {
+          "previousTotalXp": 0,
+          "newTotalXp": 0,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1,
+          "newTotalXp": 1,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 1,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 99,
+          "newTotalXp": 99,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 99,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100,
+          "newTotalXp": 100,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 100,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 350,
+          "newTotalXp": 350,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 350,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 999,
+          "newTotalXp": 999,
+          "previousLevel": 0,
+          "newLevel": 0,
+          "levelDelta": 0,
+          "previousProgressPermille": 999,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1000,
+          "newTotalXp": 1000,
+          "previousLevel": 1,
+          "newLevel": 0,
+          "levelDelta": -1,
+          "previousProgressPermille": 0,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 5000,
+          "newTotalXp": 5000,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 50000,
+          "newTotalXp": 50000,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 20999,
+          "newTotalXp": 20999,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21000,
+          "newTotalXp": 21000,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 21001,
+          "newTotalXp": 21001,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 30000,
+          "newTotalXp": 30000,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 100000,
+          "newTotalXp": 100000,
+          "previousLevel": 2,
+          "newLevel": 0,
+          "levelDelta": -2,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 1234,
+          "newTotalXp": 1234,
+          "previousLevel": 1,
+          "newLevel": 0,
+          "levelDelta": -1,
+          "previousProgressPermille": 234,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 4503599627370496,
+          "newTotalXp": 4503599627370496,
+          "previousLevel": 2,
+          "newLevel": 1,
+          "levelDelta": -1,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 0,
+          "clampedToCurveTop": false
+        },
+        {
+          "previousTotalXp": 9007199254740991,
+          "newTotalXp": 9007199254740991,
+          "previousLevel": 2,
+          "newLevel": 2,
+          "levelDelta": 0,
+          "previousProgressPermille": 1000,
+          "newProgressPermille": 1000,
+          "clampedToCurveTop": false
+        }
+      ]
+    }
+  ]
+}
