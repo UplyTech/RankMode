@@ -21,6 +21,7 @@
     "dist",
     "README.md",
     "LICENSE",
+    "NOTICE",
     "CHANGELOG.md"
   ],
   "scripts": {
@@ -49,8 +50,8 @@
     "uplytech",
     "rankmode"
   ],
-  "author": "UplyTech (Tim Hauke) <dev@uplytech.de>",
-  "license": "MIT",
+  "author": "UplyTech <dev@uplytech.de>",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UplyTech/RankMode.git",

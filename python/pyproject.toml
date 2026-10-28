@@ -3,13 +3,13 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "rankmode"
+name = "uplytech-rankmode"
 version = "3.0.0"
 description = "Experience points, levels and leaderboards for Discord bots, forums and websites. Pure calculation: no storage, no platform binding, no display."
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 requires-python = ">=3.10"
-authors = [{ name = "UplyTech (Tim Hauke)", email = "dev@uplytech.de" }]
+authors = [{ name = "UplyTech", email = "dev@uplytech.de" }]
 maintainers = [{ name = "UplyTech", email = "dev@uplytech.de" }]
 keywords = [
     "xp",
@@ -29,7 +29,7 @@ keywords = [
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -43,10 +43,10 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/uplytech/rankmode"
-Repository = "https://github.com/uplytech/rankmode"
-Changelog = "https://github.com/uplytech/rankmode/blob/main/CHANGELOG.md"
-Issues = "https://github.com/uplytech/rankmode/issues"
+Homepage = "https://github.com/UplyTech/RankMode"
+Repository = "https://github.com/UplyTech/RankMode"
+Changelog = "https://github.com/UplyTech/RankMode/blob/main/CHANGELOG.md"
+Issues = "https://github.com/UplyTech/RankMode/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -62,7 +62,7 @@ dev = [
 packages = ["src/rankmode"]
 
 [tool.hatch.build.targets.sdist]
-include = ["src", "tests", "examples", "README.md", "LICENSE", "CHANGELOG.md"]
+include = ["src", "tests", "examples", "README.md", "LICENSE", "NOTICE", "CHANGELOG.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -97,6 +97,11 @@ files = ["src/rankmode", "tests", "examples"]
 line-length = 95
 target-version = "py310"
 src = ["src", "tests"]
+
+[tool.ruff.format]
+# Ruff 0.17 also formats code blocks in Markdown. The README aligns its comments on
+# purpose, so the documentation stays as written.
+exclude = ["*.md"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "RET", "ARG"]

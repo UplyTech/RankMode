@@ -2,7 +2,7 @@
 
 > Two ways of ranking people. Experience points and levels for taking part; ratings, ladders and seasons for winning. Pure calculation: no storage, no platform binding, no display.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../LICENSE)
 [![Python](https://img.shields.io/badge/python-%3E%3D3.10-blue)](https://python.org)
 
 This is the Python edition. A [TypeScript edition](../typescript) exists and
@@ -11,7 +11,7 @@ produces identical results — proven by [shared test vectors](../shared/testcas
 ## Install
 
 ```bash
-pip install rankmode
+pip install uplytech-rankmode
 ```
 
 Zero mandatory dependencies. Python 3.10 or newer.
@@ -357,4 +357,6 @@ python -m venv .venv
 
 ## License
 
-MIT — see [LICENSE](../LICENSE).
+Apache License 2.0. See [LICENSE](../LICENSE) and [NOTICE](../NOTICE).
+
+Copyright 2021-present UplyTech.

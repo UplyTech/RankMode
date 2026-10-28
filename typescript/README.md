@@ -2,7 +2,7 @@
 
 > Two ways of ranking people. Experience points and levels for taking part; ratings, ladders and seasons for winning. Pure calculation: no storage, no platform binding, no display.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
 
 This is the TypeScript edition. A [Python edition](../python) exists and produces
@@ -379,4 +379,6 @@ node scripts/generate-shared-vectors.mjs
 
 ## License
 
-MIT — see [LICENSE](../LICENSE).
+Apache License 2.0. See [LICENSE](../LICENSE) and [NOTICE](../NOTICE).
+
+Copyright 2021-present UplyTech.
