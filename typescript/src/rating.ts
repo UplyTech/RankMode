@@ -550,8 +550,8 @@ function solveVolatility(
     }
   }
 
-  let fLow = f(low);
-  let fHigh = f(high);
+  const fLow = f(low);
+  const fHigh = f(high);
 
   // A bracket needs opposite signs. If one end is already the root, take it.
   if (fLow === 0) return volatilityAt(low);
@@ -567,7 +567,6 @@ function solveVolatility(
   // Order the bracket so that `low` is the end with the negative value.
   if (fLow > 0) {
     [low, high] = [high, low];
-    [fLow, fHigh] = [fHigh, fLow];
   }
 
   for (let step = 0; step < MAX_ITERATIONS; step += 1) {
@@ -582,10 +581,8 @@ function solveVolatility(
     }
     if (fMiddle < 0) {
       low = middle;
-      fLow = fMiddle;
     } else {
       high = middle;
-      fHigh = fMiddle;
     }
   }
 
