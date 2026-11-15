@@ -30,7 +30,10 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
-    directory = Path(sys.argv[1])
+    directory = Path(sys.argv[1]).resolve(strict=True)
+    if not directory.is_dir():
+        print(f"::error::{directory} is not a directory", file=sys.stderr)
+        return 1
     files = sorted(
         path
         for path in directory.iterdir()
