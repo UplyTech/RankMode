@@ -15,8 +15,20 @@ rm -rf "${consumer}"
 mkdir -p "${consumer}"
 cd "${consumer}"
 
+# The package has no runtime dependencies (check-dependencies.mjs enforces
+# that), so unpacking the tarball into node_modules is the same as installing
+# it, without a network fetch or an unpinned `npm install`.
+tarballs=("${temp}"/*.tgz)
+if [ "${#tarballs[@]}" -ne 1 ] || [ ! -f "${tarballs[0]}" ]; then
+  echo "expected exactly one tarball in ${temp}, found ${#tarballs[@]}" >&2
+  exit 1
+fi
+
 npm init -y > /dev/null
-npm install --no-audit --no-fund "${temp}"/*.tgz
+dest="node_modules/@uplytech/rankmode"
+mkdir -p "${dest}"
+tar -xzf "${tarballs[0]}" -C "${dest}" --strip-components=1
+test -f "${dest}/package.json"
 
 # require() - the CommonJS half of the exports map.
 node -e '

@@ -2,8 +2,12 @@
 
 ## Reporting a vulnerability
 
-Please report security issues privately to **<security@uplytech.de>** rather than
-in a public issue.
+Please report security issues privately, not in a public issue. Either way works:
+
+- GitHub private vulnerability reporting: open the
+  [Security tab](https://github.com/UplyTech/RankMode/security) and choose
+  **Report a vulnerability**.
+- E-mail: **<security@uplytech.de>**.
 
 | | |
 |---|---|
