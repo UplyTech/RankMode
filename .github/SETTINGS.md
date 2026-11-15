@@ -13,7 +13,7 @@ Settings that cannot be kept in files. The owner sets them once.
 | PyPI first publish | PyPI accepts a pending Trusted Publisher for a project that does not exist yet; no manual upload needed. |
 | Runners | GitHub-hosted (`ubuntu-latest`): the repository is public, the organisation runner group serves private repositories only, and npm Trusted Publishing works on GitHub-hosted runners only. Minutes are free for public repositories. |
 | Organisation secret | `RELEASE_SIGNING_KEY` (visibility: all repositories) |
-| Branch protection on `main` | Require the `CI` check; with a single maintainer, no required approvals |
-| Security | Dependabot alerts and updates, private vulnerability reporting, secret scanning with push protection |
+| Protection of `main` | Ruleset `main-protection` (active): no deletion, no force push, signed commits, status checks. There is no classic branch protection. Required pull requests and approvals are not set, because there is a single active maintainer; see [GOVERNANCE.md](../GOVERNANCE.md). |
+| Security | Verified through the API on 2026-11-15: Dependabot security updates enabled, private vulnerability reporting enabled. Secret scanning and push protection are **disabled** (`gh api repos/UplyTech/RankMode -q .security_and_analysis`); enabling them is an owner decision under Settings, Code security. Until then `gitleaks` in `security.yml` is the only secret scan. |
 | Code scanning | Advanced setup (`codeql.yml`); default setup stays off |
 | OpenSSF Best Practices | Register on bestpractices.dev, then add the badge to the README |

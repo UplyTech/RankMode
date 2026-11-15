@@ -417,6 +417,9 @@ RankMode/
 ├── CHANGELOG.md              # one history for both editions
 ├── CONTRIBUTING.md           # how to change a curve without breaking a community
 ├── SECURITY.md
+├── GOVERNANCE.md             # roles and decisions
+├── ROADMAP.md                # open work, grouped
+├── ARCHITECTURE.md           # modules and design decisions
 ├── LICENSE                   # Apache-2.0
 ├── NOTICE
 ├── shared/testcases/         # the contract between the editions
@@ -477,7 +480,7 @@ A release is created from a `v*` tag by `release.yml`: tests, build, signature, 
 
 - **npm**: `@uplytech/rankmode`, published with `npm publish --provenance`. Check with `npm audit signatures` or on the package page ("Built and signed on GitHub Actions").
 - **PyPI**: `uplytech-rankmode`, published with `pypa/gh-action-pypi-publish` (PEP 740 attestations included).
-- **GitHub release**: the same artefacts (npm tarball, wheel, sdist), `SHA256SUMS`, an in-toto SLSA provenance statement (`provenance.intoto.json`) and one UplyTech signature per file (`<file>.sig`, base64 of an ECDSA P-256 / SHA-256 signature).
+- **GitHub release**: the same artefacts (npm tarball, wheel, sdist), `SHA256SUMS`, an in-toto SLSA provenance statement (`provenance.intoto.jsonl`) and one UplyTech signature per file (`<file>.sig`, base64 of an ECDSA P-256 / SHA-256 signature).
 
 ```bash
 # 1. UplyTech signature (public key: release-signing.pub in this repository)
