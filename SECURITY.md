@@ -86,7 +86,8 @@ the call.
 
 | Version | Supported |
 |---|---|
-| 1.x | yes |
+| 3.x | yes |
+| < 3.0 | no |
 
 Security fixes ship as a patch release and are back-ported to the previous major
 version for six months after a new major is released.
