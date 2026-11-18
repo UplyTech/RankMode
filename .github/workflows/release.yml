@@ -4,9 +4,9 @@ name: Release
 #
 #   verify          ci.yml, the full test suite
 #   build           checks that the tag is on main; npm tarball, wheel and sdist,
-#                   SHA256SUMS and provenance.intoto.jsonl, one UplyTech signature
+#                   rankmode.cdx.json (SBOM), SHA256SUMS and provenance.intoto.jsonl, one UplyTech signature
 #                   per file (openssl, see release-signing.pub)
-#   github-release  GitHub build attestation, the signed artefacts on the GitHub release
+#   github-release  GitHub build and SBOM attestation, the signed artefacts (incl. the CycloneDX SBOM) on the GitHub release
 #   publish-npm     @uplytech/rankmode  (npm publish --provenance)
 #   publish-pypi    uplytech-rankmode  (pypa/gh-action-pypi-publish)
 #
@@ -110,6 +110,18 @@ jobs:
           python -m twine check "$RUNNER_TEMP"/../release/*
           SH
 
+      # CycloneDX SBOM of the tagged source tree (both lockfiles, the Python metadata).
+      # It sits in release/ before the checksums are written, so it is a subject of
+      # SHA256SUMS and the provenance, gets an UplyTech signature, and ships as a release asset.
+      - name: SBOM (CycloneDX)
+        uses: anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c # v0.24.3
+        with:
+          path: .
+          format: cyclonedx-json
+          output-file: release/rankmode.cdx.json
+          upload-artifact: false
+          upload-release-assets: false
+
       - name: Checksums and provenance
         run: |
           docker run --rm -v "$PWD:$PWD" -w "$PWD" \
@@ -185,6 +197,12 @@ jobs:
             release/*.tgz
             release/*.whl
             release/*.tar.gz
+
+      - name: Attest the SBOM
+        uses: actions/attest-sbom@c604332985a26aa8cf1bdc465b92731239ec6b9e # v4.1.0
+        with:
+          subject-path: release/*.tgz
+          sbom-path: release/rankmode.cdx.json
 
       - name: Create the GitHub release
         env:
