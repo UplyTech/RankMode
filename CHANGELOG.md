@@ -11,19 +11,7 @@ would be exactly the drift the shared test vectors exist to prevent.
 
 ## [Unreleased]
 
-### Changed
-
-- **Node 22.12 or newer** (`engines.node` was `>=20.0.0`). Node 20 is end-of-life, and CI tests on Node 22 and 24 only.
-- **Licence: Apache License 2.0** (was MIT). `LICENSE` carries the full Apache text, `NOTICE` the attribution `Copyright (c) 2021-present UplyTech` (UplyTech has existed as a community since 2021); both ship in the npm package, the wheel and the sdist. Author fields name UplyTech only.
-- PyPI distribution name `uplytech-rankmode` (was `rankmode`); the import name is unchanged. npm stays `@uplytech/rankmode`.
-- Releases publish to npm and PyPI with Trusted Publishing (OIDC, no registry token) and npm provenance, after the signed GitHub release. Each registry is switched on with a repository variable once its Trusted Publisher exists. Every artefact also gets a GitHub build attestation.
-- CI runs on GitHub-hosted runners, since the repository is public and the organisation runner serves private repositories only. Pull requests are validated again (read-only token, no secrets); CodeQL, dependency review and a published OpenSSF Scorecard are part of the checks.
-- Repository links point to `github.com/UplyTech/RankMode`.
-- `NOTICE` names the licensor in full: UplyTech, Tim Hauke, Albert-Schweitzer-Ring 42, 25524 Itzehoe, Germany. Python metadata uses the PEP 639 fields (`license = "Apache-2.0"`, `license-files`); the wheel carries `LICENSE` and `NOTICE` under `licenses/`.
-- Test toolchain: Vitest 5, ESLint 9 with a flat config, typescript-eslint 8. This clears the advisories in the old Vitest/Vite/esbuild dev tree (none of it reached a caller). The test matrix runs Node 22 and 24; Node 20 is end-of-life and Vitest 5 needs 22.12 or newer.
-- Releases start only from a pushed `v*` tag on `main`; the manual trigger is gone. The registry jobs run in the environment `release` (only `v*` tags, the owner approves). Tool images in CI are pinned by digest. The Python dependency audit runs against the pinned dev environment and fails on any finding.
-
-## [3.0.0] - 2026-09-08
+## [3.0.0] - unreleased (date is set when the tag is pushed)
 
 **RankMode ranks two different things now.** Until 2.0.0 it answered one
 question — how much experience did somebody earn for taking part — and a caller
@@ -34,10 +22,27 @@ and matchmaking, as a complete competitive system with nothing left to write.
 The participation half is untouched. `RankEngine`, curves, leaderboards,
 multipliers, decay and migration all behave exactly as they did in 2.0.0, and
 every 2.0.0 shared vector still passes unchanged. **No existing caller has
-anything to migrate.**
+anything to migrate in the API.** The build and packaging changes under Breaking below are the exception.
 
 The major version is for the surface, not for a behaviour change: fifty-nine new
 exported names, of which two are error classes, and a second engine.
+
+### Breaking
+
+Three changes affect anyone who installs or builds RankMode. 3.0.0 was never published to a registry, so they are part of the first release, not a migration from an earlier one.
+
+- **Node 22.12 or newer** (`engines.node` was `>=20.0.0`). Node 20 is end-of-life, and CI tests on Node 22 and 24 only.
+- **Licence: Apache License 2.0** (was MIT). `LICENSE` carries the full Apache text, `NOTICE` the attribution `Copyright (c) 2021-present UplyTech` (UplyTech has existed as a community since 2021); both ship in the npm package, the wheel and the sdist. Author fields name UplyTech only.
+- PyPI distribution name `uplytech-rankmode` (was `rankmode`); the import name is unchanged. npm stays `@uplytech/rankmode`.
+
+### Changed
+
+- Releases publish to npm and PyPI with Trusted Publishing (OIDC, no registry token) and npm provenance, after the signed GitHub release. Each registry is switched on with a repository variable once its Trusted Publisher exists. Every artefact also gets a GitHub build attestation.
+- CI runs on GitHub-hosted runners, since the repository is public and the organisation runner serves private repositories only. Pull requests are validated again (read-only token, no secrets); CodeQL, dependency review and a published OpenSSF Scorecard are part of the checks.
+- Repository links point to `github.com/UplyTech/RankMode`.
+- `NOTICE` names the licensor in full: UplyTech, Tim Hauke, Albert-Schweitzer-Ring 42, 25524 Itzehoe, Germany. Python metadata uses the PEP 639 fields (`license = "Apache-2.0"`, `license-files`); the wheel carries `LICENSE` and `NOTICE` under `licenses/`.
+- Test toolchain: Vitest 5, ESLint 9 with a flat config, typescript-eslint 8. This clears the advisories in the old Vitest/Vite/esbuild dev tree (none of it reached a caller). The test matrix runs Node 22 and 24; Node 20 is end-of-life and Vitest 5 needs 22.12 or newer.
+- Releases start only from a pushed `v*` tag on `main`; the manual trigger is gone. The registry jobs run in the environment `release` (only `v*` tags, the owner approves). Tool images in CI are pinned by digest. The Python dependency audit runs against the pinned dev environment and fails on any finding.
 
 ### For operators, in three sentences
 
