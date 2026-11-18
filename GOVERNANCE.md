@@ -8,7 +8,7 @@ organisation. This document says who decides what, and how.
 | Role | Who | What they can do |
 |---|---|---|
 | Owner | The organisation owners (`VectoDE`, `imrkumar`) | Repository settings, rulesets, secrets, teams, the `release` environment |
-| Maintainer | Members of `@uplytech/owners` and `@uplytech/packages` (see [CODEOWNERS](./.github/CODEOWNERS)) | Review and merge pull requests, triage issues, decide on versions |
+| Maintainer | Members of `@UplyTech/maintainers` (see [CODEOWNERS](./.github/CODEOWNERS)) | Review and merge pull requests, triage issues, decide on versions |
 | Release approver | The reviewer set on the `release` environment (currently `VectoDE`) | Approve a tag build before it publishes to npm and PyPI |
 | Contributor | Anyone | Open issues and pull requests, take part in Discussions |
 
