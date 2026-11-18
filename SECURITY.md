@@ -2,8 +2,12 @@
 
 ## Reporting a vulnerability
 
-Please report security issues privately to **<security@uplytech.de>** rather than
-in a public issue.
+Please report security issues privately, not in a public issue. Either way works:
+
+- GitHub private vulnerability reporting: open the
+  [Security tab](https://github.com/UplyTech/RankMode/security) and choose
+  **Report a vulnerability**.
+- E-mail: **<security@uplytech.de>**.
 
 | | |
 |---|---|
@@ -82,7 +86,8 @@ the call.
 
 | Version | Supported |
 |---|---|
-| 1.x | yes |
+| 3.x | yes |
+| < 3.0 | no |
 
 Security fixes ship as a patch release and are back-ported to the previous major
 version for six months after a new major is released.

@@ -4,7 +4,7 @@ name: Release
 #
 #   verify          ci.yml, the full test suite
 #   build           checks that the tag is on main; npm tarball, wheel and sdist,
-#                   SHA256SUMS and provenance.intoto.json, one UplyTech signature
+#                   SHA256SUMS and provenance.intoto.jsonl, one UplyTech signature
 #                   per file (openssl, see release-signing.pub)
 #   github-release  GitHub build attestation, the signed artefacts on the GitHub release
 #   publish-npm     @uplytech/rankmode  (npm publish --provenance)

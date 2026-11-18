@@ -6,7 +6,7 @@ usage: release-manifest.py DIR
 DIR holds the release artefacts. Every regular file in it that is not itself a
 checksum, signature or provenance file becomes a subject. The signing step
 (openssl, with the key from the organisation secret) runs afterwards on the
-host and signs each artefact, SHA256SUMS and provenance.intoto.json.
+host and signs each artefact, SHA256SUMS and provenance.intoto.jsonl.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 SKIP_SUFFIXES = (".sig", ".der")
-SKIP_NAMES = {"SHA256SUMS", "provenance.intoto.json"}
+SKIP_NAMES = {"SHA256SUMS", "provenance.intoto.jsonl"}
 
 
 def sha256(path: Path) -> str:
@@ -30,7 +30,10 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
-    directory = Path(sys.argv[1])
+    directory = Path(sys.argv[1]).resolve(strict=True)
+    if not directory.is_dir():
+        print(f"::error::{directory} is not a directory", file=sys.stderr)
+        return 1
     files = sorted(
         path
         for path in directory.iterdir()
@@ -70,10 +73,10 @@ def main() -> int:
             },
         },
     }
-    (directory / "provenance.intoto.json").write_text(
-        json.dumps(statement, indent=2) + "\n", encoding="utf-8"
+    (directory / "provenance.intoto.jsonl").write_text(
+        json.dumps(statement, separators=(",", ":")) + "\n", encoding="utf-8"
     )
-    print(f"ok - {len(files)} subjects in SHA256SUMS and provenance.intoto.json")
+    print(f"ok - {len(files)} subjects in SHA256SUMS and provenance.intoto.jsonl")
     return 0
 
 

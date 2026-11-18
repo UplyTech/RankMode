@@ -190,6 +190,29 @@ the volatility solver's two-cycle, the deviation decay's fixed point, and a matc
 quality that depended on argument order. None of them is visible in a single
 case, and all three fail a property in one run.
 
+## Review
+
+Every change comes in as a pull request and is reviewed against these points
+before it is merged:
+
+- It links its issue (`Fixes #n` or `Refs #n`) and follows the pull request
+  template, including the version-impact section.
+- Behaviour is the same in both editions, and a test or shared vector covers it.
+- CI is green: tests, coverage gate, lint, type checks, CodeQL and the security
+  workflow.
+- A change to what a curve or rating formula computes is labelled as a major
+  change and comes with a migration.
+- Files with code owners ([CODEOWNERS](./.github/CODEOWNERS)) are looked at by
+  those owners. Curves, rating, ladder, `fixed` and the shared vectors are not
+  merged on one pair of eyes once a second maintainer is available
+  ([#32](https://github.com/UplyTech/RankMode/issues/32)); until then the author
+  says so in the pull request and waits for CI before merging.
+- Commits are signed and the history stays linear (squash merge).
+
+A reviewer who finds a problem says what is wrong and why, and proposes a fix
+when there is an obvious one. The author answers every comment before the
+change is merged.
+
 ## Reporting a bug
 
 The most useful bug report contains the numbers:
